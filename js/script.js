@@ -133,7 +133,7 @@ btn_6.onclick = function funcPush() {
     arr6[indx] = inp_6.value;
     inp_6.value = '';
     div_6.innerHTML = arr6;
-    console.log(arr6);
+    console.log(arr6); //удалить перед сдачей
   }
 }
 
@@ -187,6 +187,23 @@ btn_8.onclick = function funcShift() {
 // 2. создает новый массив где нулевым элементов задает считанную из input строку
 // 3. дописывает остальные значения старого массива в новый
 // Выводит массив на страницу
+
+// let arr9_old = [11, 22, 33, 44, 55, 66, 77, 88, 99];
+
+let inp_9 = document.querySelector('.u-9__inp');
+let btn_9 = document.querySelector('.u-9__unshift');
+let out_9 = document.querySelector('.out-9');
+let arr9 = [11, 22, 33, 44];
+
+btn_9.onclick = function funcShift() {
+  let k9 = [inp_9.value];
+  for (let i = 1; i <= arr9.length; i++) {
+    k9[i] = arr9[i - 1];
+  }
+  arr9 = k9;
+  out_9.innerHTML = arr9;
+}
+
 
 // Task 10
 // Создайте массив arr10, примените к массиву метод reverse ( читать за метод
