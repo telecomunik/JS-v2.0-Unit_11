@@ -193,15 +193,15 @@ btn_8.onclick = function funcShift() {
 let inp_9 = document.querySelector('.u-9__inp');
 let btn_9 = document.querySelector('.u-9__unshift');
 let out_9 = document.querySelector('.out-9');
-let arr9 = [11, 22, 33, 44];
+let arr9_old = [11, 22, 33, 44];
 
 btn_9.onclick = function funcShift() {
-  let k9 = [inp_9.value];
-  for (let i = 1; i <= arr9.length; i++) {
-    k9[i] = arr9[i - 1];
+  let arr9_new = [inp_9.value];
+  for (let i = 1; i <= arr9_old.length; i++) {
+    arr9_new[i] = arr9_old[i - 1];
   }
-  arr9 = k9;
-  out_9.innerHTML = arr9;
+  arr9_old = arr9_new;
+  out_9.innerHTML = arr9_new;
 }
 
 
