@@ -241,6 +241,23 @@ btn_11.onclick = () => func_11();
 // произошло совпадение.
 // Если совпадения нет выводить -1.
 
+let inp_12 = document.querySelector('.u-12__inp');
+let btn_12 = document.querySelector('.u-12__button');
+let out_12 = document.querySelector('.out-12');
+function func_12() {
+  let arr12 = [11, 22, 33, 77, 88, 55, 44];
+  for (let i = 0; i < arr12.length; i++) {
+    let u12 = +inp_12.value;
+    if (u12 == arr12[i]) {
+      return out_12.innerHTML = i;
+    }
+    else {
+      out_12.innerHTML = '-1';
+    }
+  }
+}
+btn_12.onclick = () => func_12();
+
 // Task 13
 // Напишите функцию funcReverse, которая эмулирует работу метода reverse. Программа
 // должна:
@@ -249,16 +266,50 @@ btn_11.onclick = () => func_11();
 // 3. По очереди по элементу присвоить значения в новый массив.
 // 4. Вывести новый массив.
 
+let arr13_old = [11, 22, 33, 44, 55, 66, 77, 88, 99];
+let arr13_new = [];
+let out_13 = document.querySelector('.out-13');
+for (i = 0; i <= arr13_old.length - 1; i++) {
+  arr13_new[i] = arr13_old[(arr13_old.length - 1) - i];
+}
+out_13.innerHTML = arr13_new;
+
 // Task 14
 // Создайте инпут, куда пользователь может ввести число элементов в массиве.
 // Создайте функцию, которая прочитает введенное число и создаст массив такой длины,
 // причем каждый элемент - это случайное число от 0 до 100. Массивы выведите на
 // страницу.
 
+let inp_14 = document.querySelector('.u-14__inp');
+let btn_14 = document.querySelector('.u-14__button');
+let out_14 = document.querySelector('.out-14');
+function func_14() {
+  let arr14 = [];
+  for (let i = +inp_14.value; i > 0; i--) {
+    arr14[i - 1] = Math.floor(Math.random() * 100)
+    console.log(i);
+  }
+  out_14.innerHTML = arr14;
+}
+btn_14.onclick = () => func_14();
+
 // Task 15
 // Создайте массив arr15. Напишите функцию, которая создаст новый массив, в который
 // входят только четные элементы массива arr15 (элементы с четным индексом).
 // Выведите на экран.
+
+let arr15_old = [0, 11, 22, 33, 44, 55, 66, 77, 88, 99];
+let arr15_new = [];
+let out_15 = document.querySelector('.out-15');
+let k15 = 0;
+for (i = 0; i < arr15_old.length; i++) {
+  if (i % 2 == 0) {
+    arr15_new[k15] = arr15_old[i];
+    k15++;
+  }
+}
+out_15.innerHTML = arr15_new;
+
 
 // Task 16
 // Создайте button.u-16__button. Объявите массив arr16_1 и arr16_2. По нажатию на
@@ -266,6 +317,12 @@ btn_11.onclick = () => func_11();
 // применения concat выводите на страницу в div.out-16.1
 // let arr16_1 = [3, 5, 7 ];
 // let arr16_2 = [2, 4, 6 ];
+
+let arr16_1 = [3, 5, 7];
+let arr16_2 = [2, 4, 6];
+let out_16 = document.querySelector('.out-16');
+out_16.innerHTML = arr16_1.concat(arr16_2);
+
 
 // Task 17
 // СНапишите функцию funcConcat, которая эмулирует работу метода concat. Программа
