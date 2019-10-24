@@ -12,7 +12,6 @@ btn_1.onclick = () => {
     arr1.push(inp_1.value);
     div_1.innerHTML = arr1;
     inp_1.value = '';
-    console.log(arr1); // удалить перед сдачей
   }
 }
 
@@ -30,14 +29,12 @@ btnPush_2.onclick = () => {
     arr2.push(inp_2.value);
     div_2.innerHTML = arr2;
     inp_2.value = '';
-    console.log(arr2);// удалить перед сдачей
   }
 }
 btnPop_2.onclick = () => {
   if (arr2 !== '') {
     arr2.pop();
     div_2.innerHTML = arr2;
-    console.log(arr2);// удалить перед сдачей
   }
 }
 
@@ -56,14 +53,12 @@ btnPush_3.onclick = () => {
     arr3.push(inp_3.value);
     div_3.innerHTML = arr3;
     inp_3.value = '';
-    console.log(arr3);// удалить перед сдачей
   }
 }
 btnShift_3.onclick = () => {
   if (arr3 !== '') {
     arr3.shift();
     div_3.innerHTML = arr3;
-    console.log(arr3);// удалить перед сдачей
   }
 }
 
@@ -83,7 +78,6 @@ btnPush_4.onclick = () => {
     arr4.push(inp_4.value);
     div_4.innerHTML = arr4;
     inp_4.value = '';
-    console.log(arr4);// удалить перед сдачей
   }
 }
 let btn_4 = document.querySelector('.u-4__unshift');
@@ -92,7 +86,6 @@ btn_4.onclick = () => {
     arr4.unshift(inp_4.value);
     div_4.innerHTML = arr4;
     inp_4.value = '';
-    console.log(arr4);
   }
 }
 
@@ -112,7 +105,6 @@ btn_5.onclick = () => {
   arr5.splice(+inp5_1.value, +inp5_2.value);
   inp5_1.value = '';
   inp5_2.value = '';
-  console.log(arr5);
   div_5.innerHTML = arr5;
 }
 
@@ -133,7 +125,6 @@ btn_6.onclick = function funcPush() {
     arr6[indx] = inp_6.value;
     inp_6.value = '';
     div_6.innerHTML = arr6;
-    console.log(arr6); //удалить перед сдачей
   }
 }
 
@@ -150,7 +141,6 @@ let k7 = arr7.length - 1;
 btn_7.onclick = function funcPop() {
   let str_7 = '';
   delete arr7[k7];
-  console.log(arr7); //удалить перед сдачей
   for (let i = 0; i < arr7.length; i++) {
     if (arr7[i] !== undefined) {
       str_7 += arr7[i] + ' ';
@@ -173,7 +163,6 @@ let str_8 = '';
 let k8 = 0;
 btn_8.onclick = function funcShift() {
   arr8[k8];
-  console.log(arr8); //удалить перед сдачей
   if (arr8[k8] !== undefined) {
     str_8 += arr8[k8] + ' ';
   }
@@ -287,7 +276,6 @@ function func_14() {
   let arr14 = [];
   for (let i = +inp_14.value; i > 0; i--) {
     arr14[i - 1] = Math.floor(Math.random() * 100)
-    console.log(i);
   }
   out_14.innerHTML = arr14;
 }
@@ -321,7 +309,9 @@ out_15.innerHTML = arr15_new;
 let arr16_1 = [3, 5, 7];
 let arr16_2 = [2, 4, 6];
 let out_16 = document.querySelector('.out-16');
-out_16.innerHTML = arr16_1.concat(arr16_2);
+let btn_16 = document.querySelector('.u-16__button');
+btn_16.onclick = () =>
+  out_16.innerHTML = arr16_1.concat(arr16_2);
 
 
 // Task 17
@@ -330,12 +320,35 @@ out_16.innerHTML = arr16_1.concat(arr16_2);
 // 1. Перебирает второй массив и его элементы добавляет в первый массив.
 // 2. Выводит массив на страницу.
 
+let arr17_1 = [3, 5, 7];
+let arr17_2 = [2, 4, 6];
+
+let out_17 = document.querySelector('.out-17');
+function func_17() {
+  let n = arr17_1.length;
+  for (let i = 0; i < arr17_2.length; i++) {
+    arr17_1[n + i] = arr17_2[i];
+  }
+  out_17.innerHTML = arr17_1;
+}
+func_17();
+
+
 // Task 18
 // Создайте button.u-18__button и input.u-18__input. Объявите массив arr18 . По
 // нажатию на кнопку примените к массивам метод includes, который проверяет есть ли
 // в массиве значение введенное в input. ( читать за метод includes). Результат
 // применения includes выводите на страницу в div.out-18.
-// let arr16_1 = [3, 5, 7, 11, 12, 13, 14 ];
+// let arr18 = [3, 5, 7, 11, 12, 13, 14 ];
+
+let arr18 = [3, 5, 7, 11, 12, 13, 14];
+let inp_18 = document.querySelector('.u-18__input');
+let btn_18 = document.querySelector('.u-18__button');
+let out_18 = document.querySelector('.out-18');
+function func_18() {
+  out_18.innerHTML = arr18.includes(+inp_18.value);
+}
+btn_18.onclick = () => func_18();
 
 // Task 19
 // Напишите функцию funcIncludes, которая эмулирует работу метода includes. Программа должна:
@@ -343,6 +356,31 @@ out_16.innerHTML = arr16_1.concat(arr16_2);
 // прекращать работу цикла и выводить true.
 // Если совпадений нет - false.
 
+let arr19 = [3, 5, 7, 11, 12, 13, 14];
+let inp_19 = document.querySelector('.u-19__input');
+let btn_19 = document.querySelector('.u-19__button');
+let out_19 = document.querySelector('.out-19');
+function funcIncludes() {
+  for (let i = 0; i < arr19.length; i++) {
+    if (arr19[i] == +inp_19.value) {
+      return out_19.innerHTML = true;
+    }
+    else {
+      out_19.innerHTML = false;
+    }
+  }
+}
+btn_19.onclick = () => funcIncludes();
+
 // Task 20
 // Объявите массив arr20. Создайте кнопку, по нажатию которую к массиву применяется
 // метод join ( читать за метод join). Результа выведите на страницу.
+
+let arr20 = [11, 22, 33, 44, 55, 66, 77, 88, 99];
+let out_20 = document.querySelector('.out-20');
+let btn_20 = document.querySelector('.u-20__button');
+btn_20.onclick = () => {
+  let a = '';
+  a = arr20.join('-');
+  out_20.innerHTML = a;
+}
