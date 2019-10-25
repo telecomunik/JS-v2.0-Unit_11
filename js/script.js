@@ -238,7 +238,8 @@ function func_12() {
   for (let i = 0; i < arr12.length; i++) {
     let u12 = +inp_12.value;
     if (u12 == arr12[i]) {
-      return out_12.innerHTML = i;
+      out_12.innerHTML = i;
+      break;
     }
     else {
       out_12.innerHTML = '-1';
@@ -363,7 +364,8 @@ let out_19 = document.querySelector('.out-19');
 function funcIncludes() {
   for (let i = 0; i < arr19.length; i++) {
     if (arr19[i] == +inp_19.value) {
-      return out_19.innerHTML = true;
+      out_19.innerHTML = true;
+      break;
     }
     else {
       out_19.innerHTML = false;
