@@ -6,7 +6,7 @@
 let btn_1 = document.querySelector('.u-1__push');
 let arr1 = [];
 let div_1 = document.querySelector('.out-1');
-let inp_1 = document.querySelector('.u-1'); // продумать возможность ввода цифр
+let inp_1 = document.querySelector('.u-1');
 btn_1.onclick = () => {
   if (inp_1.value !== '') {
     arr1.push(inp_1.value);
@@ -19,23 +19,10 @@ btn_1.onclick = () => {
 // Добавьте к предыдущему заданию кнопку button.u-2__pop, при нажатии которой, к
 // массиву arr1 применяется метод pop, после чего массив выводится в div.out-1
 
-let arr2 = [];
-let btnPush_2 = document.querySelector('.u-2__push');
 let btnPop_2 = document.querySelector('.u-2__pop')
-let inp_2 = document.querySelector('.u-2');// продумать возможность ввода цифр
-let div_2 = document.querySelector('.out-2');
-btnPush_2.onclick = () => {
-  if (inp_2.value !== '') {
-    arr2.push(inp_2.value);
-    div_2.innerHTML = arr2;
-    inp_2.value = '';
-  }
-}
 btnPop_2.onclick = () => {
-  if (arr2 !== '') {
-    arr2.pop();
-    div_2.innerHTML = arr2;
-  }
+  arr1.pop();
+  div_1.innerHTML = arr1;
 }
 
 // Task 3
@@ -43,23 +30,10 @@ btnPop_2.onclick = () => {
 // метод shift ( читать за метод shift). После применения shift, массив arr1
 // выподится в div.out-1.
 
-let arr3 = [];
-let btnPush_3 = document.querySelector('.u-3__push');
 let btnShift_3 = document.querySelector('.u-3__shift')
-let inp_3 = document.querySelector('.u-3');// продумать возможность ввода цифр
-let div_3 = document.querySelector('.out-3');
-btnPush_3.onclick = () => {
-  if (inp_3.value !== '') {
-    arr3.push(inp_3.value);
-    div_3.innerHTML = arr3;
-    inp_3.value = '';
-  }
-}
 btnShift_3.onclick = () => {
-  if (arr3 !== '') {
-    arr3.shift();
-    div_3.innerHTML = arr3;
-  }
+  arr1.shift();
+  div_1.innerHTML = arr1;
 }
 
 // Task 4
@@ -68,24 +42,12 @@ btnShift_3.onclick = () => {
 // выподится в div.out-1. Надеюсь, вы догадаетесь проверять input на пустоту перед
 // применением unshift. Надеюсь, вы это сделали и в первой задаче?
 
-let arr4 = [];
-let btnPush_4 = document.querySelector('.u-4__push');
-let btnShift_4 = document.querySelector('.u-4__shift')
-let inp_4 = document.querySelector('.u-4');// продумать возможность ввода цифр
-let div_4 = document.querySelector('.out-4');
-btnPush_4.onclick = () => {
-  if (inp_4.value !== '') {
-    arr4.push(inp_4.value);
-    div_4.innerHTML = arr4;
-    inp_4.value = '';
-  }
-}
 let btn_4 = document.querySelector('.u-4__unshift');
 btn_4.onclick = () => {
-  if (inp_4.value !== '') {
-    arr4.unshift(inp_4.value);
-    div_4.innerHTML = arr4;
-    inp_4.value = '';
+  if (inp_1.value !== '') {
+    arr1.unshift(inp_1.value);
+    div_1.innerHTML = arr1;
+    inp_1.value = '';
   }
 }
 
